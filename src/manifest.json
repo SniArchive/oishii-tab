@@ -1,0 +1,15 @@
+{
+  "name": "Atarashii (New) Tab Page",
+  "manifest_version": 3,
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "host_permissions": [
+    "https://i.redd.it/"
+  ]
+}

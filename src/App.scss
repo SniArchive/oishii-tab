@@ -1,0 +1,225 @@
+/* TODO: Distribute fonts locally */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+body {
+  width: 100%;
+  height: 100vh;
+
+  background-color: #333;
+
+  overflow: hidden;
+
+  color: white;
+}
+
+p {
+  margin: 0;
+  color: #ececec;
+  font-weight: 500;
+}
+
+mark {
+  color: white;
+  background: none;
+}
+
+a {
+  color: var(--primary);
+
+  transition: color 100ms ease;
+
+  &:hover {
+    color: white;
+  }
+}
+
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: rgba(black, 35%);
+
+  box-sizing: border-box;
+  padding: 3rem;
+
+  transition: background-color 150ms ease;
+
+  p {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+
+    color: rgba(white, 80%);
+  }
+
+  strong {
+    color: white;
+  }
+
+  & > header {
+    display: flex;
+
+    .details {
+      display: inline-flex;
+      flex-direction: column;
+
+      line-height: 225%;
+
+      margin-bottom: 12px;
+    }
+
+    .header-right {
+      & > svg {
+        color: rgba(white, 80%);
+
+        transform: rotate(0) scale(1);
+
+        transition: transform 200ms ease;
+
+        &:hover {
+          cursor: pointer;
+          transform: rotate(180deg) scale(1.25);
+        }
+      }
+    }
+  }
+
+  & > footer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    .attr {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      font-weight: 500;
+
+      .attr-from {
+        a {
+          color: white;
+          font-weight: bold;
+          text-decoration: none;
+
+          &:hover {
+            color: var(--primary);
+          }
+        }
+
+        svg {
+          vertical-align: bottom;
+        }
+      }
+
+      .attr-bottom {
+        font-size: 0.8rem;
+      }
+
+      .attr-loader {
+        position: absolute;
+        bottom: 32px;
+        left: 0;
+      }
+    }
+
+    .credits {
+      svg {
+        vertical-align: middle;
+        margin: 0 2px;
+        margin-bottom: 2px;
+      }
+    }
+  }
+}
+
+.to-right {
+  margin-left: auto;
+}
+
+.to-bottom {
+  margin-top: auto;
+}
+
+.bg {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+  object-fit: cover;
+
+  transform-origin: center;
+  user-select: none;
+
+  opacity: 0;
+}
+
+// Controls loading / loadable elements
+.to-load-bg {
+  opacity: 0;
+  transform: scale(1.1);
+  filter: blur(16px);
+
+  transition: all 500ms ease;
+}
+
+.to-load {
+  opacity: 0;
+  transform: translateX(16px);
+
+  transition: all 200ms ease;
+}
+
+.load {
+  .to-load-bg {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+
+  .to-load {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@for $i from 1 to 10 {
+  .to-delay-#{$i} {
+    transition-delay: #{$i * 100 + 100}ms;
+  }
+}
+
+// Controls hidden / hideable elements
+.hideable {
+  transition-property: opacity, transform;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+}
+
+.hidden {
+  .hideable, .button:not(#btnHideGui) {
+    transition-delay: 0s;
+    opacity: 0;
+    transform: translateX(16px);
+    pointer-events: none;
+  }
+
+  .config > .buttons > #btnHideGui {
+    // lol
+    transform: translateY(calc(-134px + 100%));
+  }
+
+  .content {
+    background-color: rgba(black, 25%);
+  }
+}
