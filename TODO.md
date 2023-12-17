@@ -1,1 +1,3 @@
-- [ ] Show image source search on hover
+- [ ] Remove Image Size (maybe?)
+- [ ] Add area weather info
+- [ ] Add Settings modal
