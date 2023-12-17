@@ -22,7 +22,7 @@ Oishii (美; oishii) which means the "beautiful" (in Japanese). Featured yet sta
 
 ### Support 
 
-If you want to appreciate the work, you can support by just by starring the repo. Alternatively you can buy a  for [cf12](https://cf12.org/) ☕️
+If you want to appreciate the work, you can support by just by starring the repo. Alternatively you can buy a  coffee for [cf12](https://cf12.org/) ☕️
 
 
 
