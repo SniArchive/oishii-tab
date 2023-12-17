@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const CopyWebpackPlugin = require("copy-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HtmlWebpackInlineSVGPlugin = require("html-webpack-inline-svg-plugin")
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 
 const package = JSON.parse(
   fs.readFileSync(path.join(__dirname, "package.json"))
@@ -18,6 +19,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new NodePolyfillPlugin(),
     new HtmlWebpackPlugin({ template: "./src/index.html" }),
     new HtmlWebpackInlineSVGPlugin(),
     new CopyWebpackPlugin({

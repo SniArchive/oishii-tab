@@ -22,7 +22,11 @@ export default () => {
         hour= hour-12
         console.log(hour)
       }
-         setDate(hour + ':' + now.getMinutes())
+      let minutes= now.getMinutes()
+      if (minutes<10){
+        minutes= '0'+now.getMinutes()
+      }
+         setDate(hour + ':' + minutes)
     }
     return12Hours()
   }, [])

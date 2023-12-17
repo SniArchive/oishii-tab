@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 
 import './styles/Icons.scss'
+import { container } from "webpack";
 
 export default ({ link, url }) => {
   const [data, setData] = useState({
@@ -10,7 +11,8 @@ export default ({ link, url }) => {
   })
 
   return (
-    <div className="hideable">
+    <div className="icon-container">
+    <div className="hideable image-search">
       <form
         className="icons to-load to-delay-3"
         method={data.method}
@@ -80,6 +82,7 @@ export default ({ link, url }) => {
             <input type="hidden" name={k} value={v} key={k} />
           ))}
       </form>
+    </div>
     </div>
   )
 }

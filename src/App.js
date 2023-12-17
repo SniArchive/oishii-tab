@@ -212,10 +212,7 @@ export default () => {
 
             <div className="credits to-right">
               <p>
-              oishii •  <a href="https://github.com/cf12">
-                  cf12
-                </a> •{" "}
-                <a href="https://github.com/cf12/atarashii-tab">
+              oishii • <a href="https://github.com/realsnipc/oishii-tab">
                   v{pkg.version}
                 </a>
               </p>
